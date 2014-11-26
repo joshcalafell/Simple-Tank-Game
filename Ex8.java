@@ -1,28 +1,15 @@
 import org.lwjgl.input.Keyboard;
-import org.newdawn.slick.opengl.Texture;
-import org.newdawn.slick.opengl.TextureLoader;
-import org.newdawn.slick.util.ResourceLoader;
-
 import static org.lwjgl.opengl.GL11.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
- * @authors Joshua Michael Waggoner & Dylan Otto Krider
+ * @author rabbitfighter, memekiller
  *
  */
-public class Ex8 extends Basic
-{
-	public static void main(String[] args)
-	{
+public class Ex8 extends Basic {
+	
+	public static void main(String[] args) {
 		Ex8 app = new Ex8();
 		app.start();
 	}
@@ -30,9 +17,6 @@ public class Ex8 extends Basic
 	// Instance variables
 	private ArrayList<Box> list; // all boxes, including player
 	private Box playerBox; // convenience reference to player
-	final double PLAYER_WIDTH = 4;
-	final double PLAYER_HEIGHT = 4;
-	static final double PLAYER_SPEED = 20;
 	private double lambda;
 	private int ammo;
 	private long startTime;
@@ -42,9 +26,13 @@ public class Ex8 extends Basic
 	private boolean lost;
 	private boolean won;
 	String state;
+	
+	// Final variables
+	final double PLAYER_WIDTH = 4;
+	final double PLAYER_HEIGHT = 4;
+	static final double PLAYER_SPEED = 20;
 
-	public Ex8()
-	{
+	public Ex8() {
 
 		// defines the actual size of the window.
 		super(
@@ -53,17 +41,15 @@ public class Ex8 extends Basic
 
 	}// end constructor
 
-	/* (non-Javadoc) Initializes the game
-	 * @see Basic#init()
-	 */
-	public void init()
-	{
+	public void init() {
 
 		// load all the boxes:
 		list = new ArrayList<Box>();
+		
 		// xBounce=false; yBounce=false;
 		startTime = (System.nanoTime() / 100000000) % 1000;
-		// ===============hardcoded boxes========================
+
+		// ===============hard coded boxes========================
 
 		list.add(new Box(new Triple(50, 50, 0), PLAYER_WIDTH, PLAYER_HEIGHT,
 				90, "player"));
@@ -119,11 +105,7 @@ public class Ex8 extends Basic
 
 	}
 
-	/* (non-Javadoc) Displays graphics
-	 * @see Basic#display()
-	 */
-	public void display()
-	{
+	public void display() {
 		// clear the screen to background color and clear the depth buffer:
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		// switch to model view from this point on:
@@ -131,36 +113,27 @@ public class Ex8 extends Basic
 		glLoadIdentity();
 
 		// Different states for output
-		if ((!started && !won) || (!started && !lost))
-		{
+		if ((!started && !won) || (!started && !lost)) {
 			state = "notStarted";
 		}
-		if (started)
-		{
+		if (started) {
 			state = "started";
 		}
-		if (lost)
-		{
+		if (lost) {
 			state = "lost";
 		}
-		if (won)
-		{
+		if (won) {
 			state = "won";
 		}// end else/if
 
 		// draw the world:
-		for (int k = 0; k < list.size(); k++)
-		{
-			list.get(k).draw(state);
+		for (int k = 0; k < list.size(); k++) {
+			list.get(k).draw(state, ammo);
 		}
 
 	}// end display
 
-	/* (non-Javadoc) Processing of inputs.
-	 * @see Basic#processInputs()
-	 */
-	public void processInputs()
-	{
+	public void processInputs() {
 		Keyboard.poll();
 
 		if (Keyboard.isKeyDown(Keyboard.KEY_UP))
@@ -178,26 +151,20 @@ public class Ex8 extends Basic
 		if (Keyboard.isKeyDown(Keyboard.KEY_S))
 			playerBox.stop();
 
-		if (Keyboard.isKeyDown(Keyboard.KEY_RETURN))
-		{
-			if (started == false)
-			{
+		if (Keyboard.isKeyDown(Keyboard.KEY_RETURN)) {
+			if (started == false) {
 				started = true;
-				if (lost || won)
-				{
+				if (lost || won) {
 					init();
 				}
 			}
 
 		}
 
-		if (Keyboard.isKeyDown(Keyboard.KEY_SPACE))
-		{
+		if (Keyboard.isKeyDown(Keyboard.KEY_SPACE)) {
 
-			if (ammo > 0)
-			{
-				if ((((System.nanoTime() / 100000000) % 1000) - startTime) > 2)
-				{
+			if (ammo > 0) {
+				if ((((System.nanoTime() / 100000000) % 1000) - startTime) > 2) {
 					// System.out.println((((System.nanoTime()/100000000)%1000)-startTime));
 					startTime = ((System.nanoTime() / 100000000) % 1000);
 
@@ -218,62 +185,44 @@ public class Ex8 extends Basic
 
 	}// end process inputs
 
-	/* (non-Javadoc) Update
-	 * @see Basic#update()
-	 */
-	public void update()
-	{
+	public void update() {
 		int n = 0;
-		for (int i = 0; i < list.size(); i++)
-		{
-			if (list.get(i).kind == "monster")
-			{
+		for (int i = 0; i < list.size(); i++) {
+			if (list.get(i).kind == "monster") {
 				n++;
 			}
 		}
 
-		if (!list.contains(playerBox))
-		{
+		if (!list.contains(playerBox)) {
 			won = false;
 			lost = true;
 			started = false;
 		}
 
-		System.out.println(n);
-
-		if (n == 0)
-		{
+		if (n == 0) {
 			won = true;
 			started = false;
 			lost = false;
 		}
 
-		if (started)
-		{
+		if (started) {
 
 			frames++;
 			frames %= 30 * 2; // when it gets to 4 seconds, reset frames
 
-			if (!list.contains(playerBox))
-			{
-				for (int j = list.size() - 1; j > 3; j--)
-				{
-					if (list.get(j).kind != "monster")
-					{
+			if (!list.contains(playerBox)) {
+				for (int j = list.size() - 1; j > 3; j--) {
+					if (list.get(j).kind != "monster") {
 						list.remove(j);
-					}
-					else
-					{
+					} else {
 						list.get(j).speed = 0;
 						list.get(j).stop();
 					}
 				}
 			}
 
-			for (int i = 0; i < list.size(); i++)
-			{
-				if (list.get(i).kind == "monster")
-				{
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i).kind == "monster") {
 					list.get(i).shotFrames++;
 				}
 			}
@@ -281,10 +230,8 @@ public class Ex8 extends Basic
 			// System.out.println(System.nanoTime());
 			check(lambda);
 
-			for (int i = 0; i < list.size(); i++)
-			{
-				if (list.get(i).getKill() == true)
-				{
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i).getKill() == true) {
 					// playerBox.stop();
 					list.remove(i);
 				}
@@ -298,67 +245,49 @@ public class Ex8 extends Basic
 
 	}
 
-	private void moveAll(double lam)
-	{
+	private void moveAll(double lam) {
 
-		if (playerBox.collideLam == lam)
-		{
-			if (playerBox.collide.kind == "wall")
-			{
+		if (playerBox.collideLam == lam) {
+			if (playerBox.collide.kind == "wall") {
 				playerBox.move(lam - .01);
 				playerBox.collideLam = lam;
 
 				playerBox.stop();
 				playerBox.angle += 180;
 
-			}
-			else if (playerBox.collide.kind == "food")
-			{
+			} else if (playerBox.collide.kind == "food") {
 				playerBox.getRewardForFood();
 				playerBox.collide.setKill(true);
 				playerBox.collideLam = lam;
 
-			}
-			else if (playerBox.collide.kind == "bullet")
-			{
+			} else if (playerBox.collide.kind == "bullet") {
 				playerBox.collide.setKill(false);
 				list.remove(playerBox);
-			}
-			else if (playerBox.collide.kind == "energy")
-			{
+			} else if (playerBox.collide.kind == "energy") {
 				playerBox.collide.setKill(true);
 				playerBox.collideLam = lam;
 				ammo += 1;
-			}
-			else if (playerBox.collide.kind == "monster")
-			{
+			} else if (playerBox.collide.kind == "monster") {
 
 				list.remove(playerBox);
 
-				for (int i = 0; i < list.size(); i++)
-				{
-					if (list.get(i).kind == "monster")
-					{
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i).kind == "monster") {
 						list.get(i).canFire = false;
 						list.get(i).stop();
 						list.get(i).speed = 0;
 					}
 				}
 			}
-		}
-		else
-		{
+		} else {
 
 			playerBox.move(lam);
 			playerBox.updateVector();
 
-			if (frames == 5)
-			{
+			if (frames == 5) {
 
-				for (int i = 0; i < list.size(); i++)
-				{
-					if (list.get(i).kind == "monster")
-					{
+				for (int i = 0; i < list.size(); i++) {
+					if (list.get(i).kind == "monster") {
 
 						list.get(i).changeDirectionAccordingToPlayer(playerBox);
 
@@ -366,16 +295,12 @@ public class Ex8 extends Basic
 				}// end for
 			}// end if
 
-			for (int i = 0; i < list.size(); i++)
-			{
-				if (list.get(i).kind == "monster")
-				{
-					if (list.get(i).isInRange(playerBox))
-					{
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i).kind == "monster") {
+					if (list.get(i).isInRange(playerBox)) {
 
 						if (list.get(i).shotFrames > 30 * 8
-								&& list.get(i).canFire)
-						{
+								&& list.get(i).canFire) {
 							list.get(i).fireShot(list);
 							list.get(i).shotFired = true;
 							list.get(i).shotFrames = 0;
@@ -387,34 +312,25 @@ public class Ex8 extends Basic
 
 		playerBox.collideLam = 0;
 
-		for (int i = 1; i < list.size(); i++)
-		{
+		for (int i = 1; i < list.size(); i++) {
 			Box b = list.get(i);
-			if (b.collideLam == lam)
-			{
+			if (b.collideLam == lam) {
 				b.move(lam - .01);
-				if (b.kind != "bullet")
-				{
+				if (b.kind != "bullet") {
 					b.bounce();
 					b.updateVector();
-				}
-				else
-				{
+				} else {
 					if (b.collide.kind != "bullet"
 							&& b.collide.kind != "player")
 						b.setKill(true);
-					if (b.collide.kind == "monster")
-					{
+					if (b.collide.kind == "monster") {
 						b.collide.setKill(true);
 					}
-					if (b.collide.kind == "bullet")
-					{
+					if (b.collide.kind == "bullet") {
 						b.collide.setKill(true);
 					}
 				}
-			}
-			else
-			{
+			} else {
 				b.move(lam);
 				b.updateVector();
 			}// end if/else
@@ -422,18 +338,13 @@ public class Ex8 extends Basic
 
 	}// end moveAll()
 
-	public void check(double lam)
-	{
+	public void check(double lam) {
 
 		double temp = 0;
 		int num = 0;
-		if (lam <= 0)
-		{
-		}
-		else
-		{
-			while (num <= list.size() - 1)
-			{
+		if (lam <= 0) {
+		} else {
+			while (num <= list.size() - 1) {
 				temp = checkCollision(list.get(num), lam, num);
 				num++;
 				if (temp < lam)
@@ -444,8 +355,7 @@ public class Ex8 extends Basic
 		}
 	}
 
-	public double findLambda(Box box, Box other, double lam)
-	{
+	public double findLambda(Box box, Box other, double lam) {
 		double lambdaX = lam;
 		double lambdaY = lam;
 		double distW = (box.w + other.w + .001);
@@ -460,16 +370,13 @@ public class Ex8 extends Basic
 		// is the y within the bounds for either lambda?
 		if ((Math.abs((other.Vector.scalarMult(lambdaX).y + other.y)
 				- (box.Vector.scalarMult(lambdaX).y + box.y)) <= distH)
-				&& (lambdaX < lam && lambdaX > 0))
-		{
+				&& (lambdaX < lam && lambdaX > 0)) {
 			box.xBounce = false;
 			box.yBounce = true;
 			scalar = lambdaX;
-		}
-		else if ((Math.abs((other.Vector.scalarMult(tempX).y + other.y)
+		} else if ((Math.abs((other.Vector.scalarMult(tempX).y + other.y)
 				- (box.Vector.scalarMult(tempX).y + box.y)) <= distH)
-				&& (tempX < lam && tempX > 0))
-		{
+				&& (tempX < lam && tempX > 0)) {
 
 			box.xBounce = false;
 			box.yBounce = true;
@@ -483,24 +390,20 @@ public class Ex8 extends Basic
 
 		if ((Math.abs((other.Vector.scalarMult(lambdaY).x + other.x)
 				- (box.Vector.scalarMult(lambdaY).x + box.x)) <= distW)
-				&& (lambdaY < lam && lambdaY > 0))
-		{
+				&& (lambdaY < lam && lambdaY > 0)) {
 			box.xBounce = true;
 			box.yBounce = false;
 			scalar = lambdaY;
 
-		}
-		else if ((Math.abs((other.Vector.scalarMult(tempY).x + other.x)
+		} else if ((Math.abs((other.Vector.scalarMult(tempY).x + other.x)
 				- (box.Vector.scalarMult(tempY).x + box.x)) <= distW)
-				&& (tempY < lam && tempY > 0))
-		{
+				&& (tempY < lam && tempY > 0)) {
 			box.xBounce = true;
 			box.yBounce = false;
 			scalar = tempY;
 		}
 
-		if (scalar < lam)
-		{
+		if (scalar < lam) {
 			other.collide = box;
 			box.collide = other;
 			other.collideLam = scalar;
@@ -511,30 +414,24 @@ public class Ex8 extends Basic
 		return scalar;
 	}
 
-	public double checkCollision(Box box, double lam, int n)
-	{
+	public double checkCollision(Box box, double lam, int n) {
 		double temp = 1;
 		double temp2 = 1;
 		box.xBounce = false;
 		box.yBounce = false;
 		temp2 = lam;
-		for (int i = n + 1; i < list.size(); i++)
-		{
+		for (int i = n + 1; i < list.size(); i++) {
 			temp = findLambda(box, list.get(i), lam);
-			if (temp < temp2)
-			{
+			if (temp < temp2) {
 				temp2 = temp;
 			}
 		}
 		return temp2;
 	}
 
-	public void updateMonsters()
-	{
-		for (int i = 0; i > list.size(); i++)
-		{
-			if (list.get(i).kind == "monster")
-			{
+	public void updateMonsters() {
+		for (int i = 0; i > list.size(); i++) {
+			if (list.get(i).kind == "monster") {
 				list.get(i).changeDirectionAccordingToPlayer(playerBox);
 			}
 		}
