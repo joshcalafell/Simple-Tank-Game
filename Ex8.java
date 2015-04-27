@@ -4,18 +4,19 @@ import static org.lwjgl.opengl.GL11.*;
 import java.util.ArrayList;
 
 /**
- * @author rabbitfighter, memekiller
- *
+ * @author Joshua Michael Waggoner (@rabbitfighter81) & Dylan Otto Krider 
+ * Git Hub: github.com/rabbitfighter81/SimpleJOGLGame
+ * 
  */
 public class Ex8 extends Basic {
-	
+
 	public static void main(String[] args) {
 		Ex8 app = new Ex8();
 		app.start();
 	}
 
 	// Instance variables
-	private ArrayList<Box> list; // all boxes, including player
+	private ArrayList < Box > list; // all boxes, including player
 	private Box playerBox; // convenience reference to player
 	private double lambda;
 	private int ammo;
@@ -26,7 +27,7 @@ public class Ex8 extends Basic {
 	private boolean lost;
 	private boolean won;
 	String state;
-	
+
 	// Final variables
 	final double PLAYER_WIDTH = 4;
 	final double PLAYER_HEIGHT = 4;
@@ -36,23 +37,23 @@ public class Ex8 extends Basic {
 
 		// defines the actual size of the window.
 		super(
-				"Ex8 | Dylan & Josh | Controls: UP, DOWN, LEFT, RIGHT, SPACEBAR to shoot",
-				800, 800, 60);
+			"Ex8 | Dylan & Josh | Controls: UP, DOWN, LEFT, RIGHT, SPACEBAR to shoot",
+		800, 800, 60);
 
-	}// end constructor
+	} // end constructor
 
 	public void init() {
 
 		// load all the boxes:
-		list = new ArrayList<Box>();
-		
+		list = new ArrayList < Box > ();
+
 		// xBounce=false; yBounce=false;
 		startTime = (System.nanoTime() / 100000000) % 1000;
 
 		// ===============hard coded boxes========================
 
 		list.add(new Box(new Triple(50, 50, 0), PLAYER_WIDTH, PLAYER_HEIGHT,
-				90, "player"));
+		90, "player"));
 		playerBox = list.get(0);
 		playerBox.angle = 90;
 		playerBox.Vector = new Triple(0, 1, 0);
@@ -124,32 +125,27 @@ public class Ex8 extends Basic {
 		}
 		if (won) {
 			state = "won";
-		}// end else/if
+		} // end else/if
 
 		// draw the world:
 		for (int k = 0; k < list.size(); k++) {
 			list.get(k).draw(state, ammo);
 		}
 
-	}// end display
+	} // end display
 
 	public void processInputs() {
 		Keyboard.poll();
 
-		if (Keyboard.isKeyDown(Keyboard.KEY_UP))
-			playerBox.changeSpeed(1);
+		if (Keyboard.isKeyDown(Keyboard.KEY_UP)) playerBox.changeSpeed(1);
 
-		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN))
-			playerBox.changeSpeed(-1);
+		if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) playerBox.changeSpeed(-1);
 
-		if (Keyboard.isKeyDown(Keyboard.KEY_LEFT))
-			playerBox.turn(1);
+		if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) playerBox.turn(1);
 
-		if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT))
-			playerBox.turn(-1);
+		if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) playerBox.turn(-1);
 
-		if (Keyboard.isKeyDown(Keyboard.KEY_S))
-			playerBox.stop();
+		if (Keyboard.isKeyDown(Keyboard.KEY_S)) playerBox.stop();
 
 		if (Keyboard.isKeyDown(Keyboard.KEY_RETURN)) {
 			if (started == false) {
@@ -170,8 +166,7 @@ public class Ex8 extends Basic {
 
 					double c = Math.cos(Math.toRadians(playerBox.angle));
 					double s = Math.sin(Math.toRadians(playerBox.angle));
-					Triple bullet = new Triple(playerBox.x + 8 * c, playerBox.y
-							+ 8 * s, 0);
+					Triple bullet = new Triple(playerBox.x + 8 * c, playerBox.y + 8 * s, 0);
 					Box b3 = new Box(bullet, 1, .5, 0, "bullet");
 					b3.speed = playerBox.speed + 2;
 					// b3.changeSpeed(playerBox.speed+35);
@@ -183,7 +178,7 @@ public class Ex8 extends Basic {
 			}
 		}
 
-	}// end process inputs
+	} // end process inputs
 
 	public void update() {
 		int n = 0;
@@ -291,24 +286,23 @@ public class Ex8 extends Basic {
 
 						list.get(i).changeDirectionAccordingToPlayer(playerBox);
 
-					}// end if
-				}// end for
-			}// end if
+					} // end if
+				} // end for
+			} // end if
 
 			for (int i = 0; i < list.size(); i++) {
 				if (list.get(i).kind == "monster") {
 					if (list.get(i).isInRange(playerBox)) {
 
-						if (list.get(i).shotFrames > 30 * 8
-								&& list.get(i).canFire) {
+						if (list.get(i).shotFrames > 30 * 8 && list.get(i).canFire) {
 							list.get(i).fireShot(list);
 							list.get(i).shotFired = true;
 							list.get(i).shotFrames = 0;
-						}// end if
-					}// end if
-				}// end if
-			}// end for
-		}// end if
+						} // end if
+					} // end if
+				} // end if
+			} // end for
+		} // end if
 
 		playerBox.collideLam = 0;
 
@@ -320,9 +314,7 @@ public class Ex8 extends Basic {
 					b.bounce();
 					b.updateVector();
 				} else {
-					if (b.collide.kind != "bullet"
-							&& b.collide.kind != "player")
-						b.setKill(true);
+					if (b.collide.kind != "bullet" && b.collide.kind != "player") b.setKill(true);
 					if (b.collide.kind == "monster") {
 						b.collide.setKill(true);
 					}
@@ -333,22 +325,20 @@ public class Ex8 extends Basic {
 			} else {
 				b.move(lam);
 				b.updateVector();
-			}// end if/else
-		}// end for
+			} // end if/else
+		} // end for
 
-	}// end moveAll()
+	} // end moveAll()
 
 	public void check(double lam) {
 
 		double temp = 0;
 		int num = 0;
-		if (lam <= 0) {
-		} else {
+		if (lam <= 0) {} else {
 			while (num <= list.size() - 1) {
 				temp = checkCollision(list.get(num), lam, num);
 				num++;
-				if (temp < lam)
-					lam = temp;
+				if (temp < lam) lam = temp;
 			}
 			moveAll(lam);
 			check(lam - temp);
@@ -364,19 +354,14 @@ public class Ex8 extends Basic {
 
 		// get the two lambdas when player.x=other.x
 		lambdaX = (distW + box.x - other.x) / (other.Vector.x - box.Vector.x);
-		double tempX = (-distW + box.x - other.x)
-				/ (other.Vector.x - box.Vector.x);
+		double tempX = (-distW + box.x - other.x) / (other.Vector.x - box.Vector.x);
 
 		// is the y within the bounds for either lambda?
-		if ((Math.abs((other.Vector.scalarMult(lambdaX).y + other.y)
-				- (box.Vector.scalarMult(lambdaX).y + box.y)) <= distH)
-				&& (lambdaX < lam && lambdaX > 0)) {
+		if ((Math.abs((other.Vector.scalarMult(lambdaX).y + other.y) - (box.Vector.scalarMult(lambdaX).y + box.y)) <= distH) && (lambdaX < lam && lambdaX > 0)) {
 			box.xBounce = false;
 			box.yBounce = true;
 			scalar = lambdaX;
-		} else if ((Math.abs((other.Vector.scalarMult(tempX).y + other.y)
-				- (box.Vector.scalarMult(tempX).y + box.y)) <= distH)
-				&& (tempX < lam && tempX > 0)) {
+		} else if ((Math.abs((other.Vector.scalarMult(tempX).y + other.y) - (box.Vector.scalarMult(tempX).y + box.y)) <= distH) && (tempX < lam && tempX > 0)) {
 
 			box.xBounce = false;
 			box.yBounce = true;
@@ -385,19 +370,14 @@ public class Ex8 extends Basic {
 
 		lambdaY = (distH + box.y - other.y) / (other.Vector.y - box.Vector.y);
 
-		double tempY = (-distH + box.y - other.y)
-				/ (other.Vector.y - box.Vector.y);
+		double tempY = (-distH + box.y - other.y) / (other.Vector.y - box.Vector.y);
 
-		if ((Math.abs((other.Vector.scalarMult(lambdaY).x + other.x)
-				- (box.Vector.scalarMult(lambdaY).x + box.x)) <= distW)
-				&& (lambdaY < lam && lambdaY > 0)) {
+		if ((Math.abs((other.Vector.scalarMult(lambdaY).x + other.x) - (box.Vector.scalarMult(lambdaY).x + box.x)) <= distW) && (lambdaY < lam && lambdaY > 0)) {
 			box.xBounce = true;
 			box.yBounce = false;
 			scalar = lambdaY;
 
-		} else if ((Math.abs((other.Vector.scalarMult(tempY).x + other.x)
-				- (box.Vector.scalarMult(tempY).x + box.x)) <= distW)
-				&& (tempY < lam && tempY > 0)) {
+		} else if ((Math.abs((other.Vector.scalarMult(tempY).x + other.x) - (box.Vector.scalarMult(tempY).x + box.x)) <= distW) && (tempY < lam && tempY > 0)) {
 			box.xBounce = true;
 			box.yBounce = false;
 			scalar = tempY;

@@ -14,6 +14,11 @@ import java.util.ArrayList;
 
 import org.lwjgl.opengl.GL11;
 
+/**
+ * @author Joshua Michael Waggoner (@rabbitfighter81) & Dylan Otto Krider 
+ * Git Hub: github.com/rabbitfighter81/SimpleJOGLGame
+ * 
+ */
 public class Box {
 	private static double SPEEDCHANGEAMOUNT = .05;
 	private static double ANGLECHANGEAMOUNT = 5;
@@ -38,7 +43,7 @@ public class Box {
 
 	// list.add(new Box(50, 50, 5, 5, 90, "player"));
 	public Box(Triple tripIn, double wIn, double hIn, double angleIn,
-			String kindIn) {
+	String kindIn) {
 		x = tripIn.x;
 		y = tripIn.y;
 		w = wIn;
@@ -55,7 +60,7 @@ public class Box {
 		shotFired = false;
 		shotFrames = 0;
 		canFire = true;
-	}// end constructor
+	} // end constructor
 
 	public void move(double Time) {
 
@@ -70,7 +75,7 @@ public class Box {
 			y = trip.y;
 		}
 
-	}// end move
+	} // end move
 
 	public Triple getPosition() {
 		return new Triple(x, y, 0);
@@ -78,8 +83,7 @@ public class Box {
 
 	public Triple updateVector() {
 		return Vector = new Triple(
-				speed * Math.cos(Math.toRadians(this.angle)), speed
-						* Math.sin(Math.toRadians(this.angle)), 0);
+		speed * Math.cos(Math.toRadians(this.angle)), speed * Math.sin(Math.toRadians(this.angle)), 0);
 	}
 
 	public void draw(String state, int ammo) {
@@ -90,22 +94,15 @@ public class Box {
 		s = Math.sin(Math.toRadians(angle));
 
 		// determine box color
-		if (kind.equals("player"))
-			glColor3f(0, 0, 1);
-		else if (kind.equals("monster"))
-			glColor3f(1, 0, 0);
-		else if (kind.equals("food"))
-			glColor3f(1, 1, 0);
-		else if (kind.equals("wall"))
-			glColor3f(0.5f, 0.5f, 0.5f);
-		else if (kind.equals("energy"))
-			glColor3f(.9f, .8f, .8f);
-		else if (kind.equals("bullet"))
-			glColor3f(1, 1, 1);
+		if (kind.equals("player")) glColor3f(0, 0, 1);
+		else if (kind.equals("monster")) glColor3f(1, 0, 0);
+		else if (kind.equals("food")) glColor3f(1, 1, 0);
+		else if (kind.equals("wall")) glColor3f(0.5f, 0.5f, 0.5f);
+		else if (kind.equals("energy")) glColor3f(.9f, .8f, .8f);
+		else if (kind.equals("bullet")) glColor3f(1, 1, 1);
 
 		// openGlStuff
-		glPushMatrix();
-		{
+		glPushMatrix(); {
 			glTranslated(x, y, 0);
 			if (kind == "bullet") {
 
@@ -114,8 +111,7 @@ public class Box {
 			glScaled(w, h, 1);
 			// glEnable(GL_TEXTURE_2D);
 
-			glBegin(GL_POLYGON);
-			{
+			glBegin(GL_POLYGON); {
 
 				glVertex3d(-1, -1, 0);
 				glVertex3d(1, -1, 0);
@@ -130,15 +126,13 @@ public class Box {
 		// if (kind.equals("player")) {
 		glColor3f(1, 1, 1);
 
-		glPushMatrix();
-		{
+		glPushMatrix(); {
 			if (kind == "player" || kind == "monster") {
 				// cleverly put it on top by setting z to .1
 				glTranslated(x, y, .1);
 				glScaled(w, h, 1);
 
-				glBegin(GL_LINES);
-				{
+				glBegin(GL_LINES); {
 					glVertex3d(0, 0, 0);
 					glVertex3d(c, s, 0);
 				}
@@ -148,8 +142,7 @@ public class Box {
 		glPopMatrix();
 
 		if (state == "notStarted") {
-			glPushMatrix();
-			{
+			glPushMatrix(); {
 				glColor3f(0, 0, 1);
 				glScaled(.2, .2, 1);
 				drawString("Press Enter To Start", 175, 300);
@@ -158,8 +151,7 @@ public class Box {
 		}
 
 		if (state == "won") {
-			glPushMatrix();
-			{
+			glPushMatrix(); {
 				glColor3f(0, 0, 1);
 				glScaled(.2, .2, 1);
 				drawString("You Won... Press Enter To Restart", 140, 300);
@@ -168,8 +160,7 @@ public class Box {
 		}
 
 		if (state == "lost") {
-			glPushMatrix();
-			{
+			glPushMatrix(); {
 				glColor3f(0, 0, 1);
 				glScaled(.2, .2, 1);
 				drawString("You Lost... Press Enter To Restart", 130, 300);
@@ -177,8 +168,7 @@ public class Box {
 			glPopMatrix();
 		}
 
-		glPushMatrix();
-		{
+		glPushMatrix(); {
 			glColor3f(0, 0, 1);
 			glScaled(.2, .2, 1);
 			drawString("Ammo X " + ammo, 10, 476);
@@ -186,15 +176,13 @@ public class Box {
 		glPopMatrix();
 
 		// }
-	}// end draw
+	} // end draw
 
 	// change the speed of the player
 	public void changeSpeed(double d) {
 		speed += d * SPEEDCHANGEAMOUNT;
-		if (speed >= MAX_SPEED)
-			speed = MAX_SPEED;
-		if (speed <= -MAX_SPEED)
-			speed = -MAX_SPEED;
+		if (speed >= MAX_SPEED) speed = MAX_SPEED;
+		if (speed <= -MAX_SPEED) speed = -MAX_SPEED;
 		// updateVector();
 	}
 
@@ -215,7 +203,7 @@ public class Box {
 		updateVector();
 	}
 
-	public boolean determineIfWon(ArrayList<Box> list) {
+	public boolean determineIfWon(ArrayList < Box > list) {
 		for (int i = 0; i < list.size(); i++) {
 			if (list.get(i).kind.compareToIgnoreCase("food") == 0) {
 				return false;
@@ -281,7 +269,7 @@ public class Box {
 		}
 	}
 
-	public void fireShot(ArrayList<Box> list) {
+	public void fireShot(ArrayList < Box > list) {
 		double c = Math.cos(Math.toRadians(this.angle));
 		double s = Math.sin(Math.toRadians(this.angle));
 		Triple bullet = new Triple(this.x + 8 * c, this.y + 8 * s, 0);
@@ -320,13 +308,13 @@ public class Box {
 			}
 		}
 		return false;
-	}// end range
+	} // end range
 
 	public static void drawString(String s, int x, int y) {
 		int startX = x;
 		glColor3f(1, 1, 1);
 		GL11.glBegin(GL11.GL_POINTS);
-		for (char c : s.toLowerCase().toCharArray()) {
+		for (char c: s.toLowerCase().toCharArray()) {
 			if (c == 'a') {
 				for (int i = 0; i < 8; i++) {
 					GL11.glVertex2f(x + 1, y + i);
@@ -531,13 +519,11 @@ public class Box {
 			} else if (c == 'q') {
 				for (int i = 1; i <= 7; i++) {
 					GL11.glVertex2f(x + 1, y + i);
-					if (i != 1)
-						GL11.glVertex2f(x + 7, y + i);
+					if (i != 1) GL11.glVertex2f(x + 7, y + i);
 				}
 				for (int i = 2; i <= 6; i++) {
 					GL11.glVertex2f(x + i, y + 8);
-					if (i != 6)
-						GL11.glVertex2f(x + i, y + 0);
+					if (i != 6) GL11.glVertex2f(x + i, y + 0);
 				}
 				GL11.glVertex2f(x + 4, y + 3);
 				GL11.glVertex2f(x + 5, y + 2);
@@ -620,9 +606,9 @@ public class Box {
 				x += 8;
 			} else if (c == 'x') {
 				for (int i = 1; i <= 7; i++)
-					GL11.glVertex2f(x + i, y + i);
+				GL11.glVertex2f(x + i, y + i);
 				for (int i = 7; i >= 1; i--)
-					GL11.glVertex2f(x + i, y + 8 - i);
+				GL11.glVertex2f(x + i, y + 8 - i);
 				x += 8;
 			} else if (c == 'y') {
 				GL11.glVertex2f(x + 4, y);
@@ -741,7 +727,7 @@ public class Box {
 				x += 8;
 			} else if (c == '7') {
 				for (int i = 0; i <= 7; i++)
-					GL11.glVertex2f(x + i, y + 8);
+				GL11.glVertex2f(x + i, y + 8);
 				GL11.glVertex2f(x + 7, y + 7);
 				GL11.glVertex2f(x + 7, y + 6);
 
@@ -798,4 +784,4 @@ public class Box {
 		GL11.glEnd();
 	}
 
-}//EOF
+} //EOF

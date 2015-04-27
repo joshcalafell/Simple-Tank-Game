@@ -14,7 +14,7 @@ import org.lwjgl.opengl.DisplayMode;
  * - display: draw graphics
  *   showing current state of things
  * 
- * @author rabbitfighter
+ * @author rabbitfighter81 & memekiller
  *
  */
 public class Basic {
@@ -22,7 +22,7 @@ public class Basic {
 	// test this basic application
 	public static void main(String[] args) {
 
-	}// main
+	} // main
 
 	private int frameNumber; // total number of frames displayed
 	private int fps; // target fps
@@ -83,7 +83,7 @@ public class Basic {
 
 		Display.destroy();
 
-	}// start
+	} // start
 
 	// halt the application under program control
 	protected void halt() {
@@ -94,17 +94,13 @@ public class Basic {
 	 * Methods to be overridden
 	 */
 
-	protected void init() {
-	}
+	protected void init() {}
 
-	protected void processInputs() {
-	}
+	protected void processInputs() {}
 
-	protected void update() {
-	}
+	protected void update() {}
 
-	protected void display() {
-	}
+	protected void display() {}
 
 	/***** Getters/Setters *****/
 
@@ -175,4 +171,4 @@ public class Basic {
 		this.resizeable = resizeable;
 	}
 
-}// EOF
+} // EOF
