@@ -4,7 +4,7 @@ import static org.lwjgl.opengl.GL11.*;
 import java.util.ArrayList;
 
 /**
- * @author Joshua Michael Waggoner (@rabbitfighter81) & Dylan Otto Krider 
+ * @author Joshua Michael Waggoner (@rabbitfighter81) and Dylan Otto Krider 
  * Git Hub: github.com/rabbitfighter81/SimpleJOGLGame
  * 
  */

@@ -14,7 +14,7 @@ import org.lwjgl.opengl.DisplayMode;
  * - display: draw graphics
  *   showing current state of things
  * 
- * @author rabbitfighter81 & memekiller
+ * @author rabbitfighter81 and memekiller
  *
  */
 public class Basic {
