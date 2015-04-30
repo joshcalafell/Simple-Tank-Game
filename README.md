@@ -10,7 +10,9 @@ Navigation
 [Screenshot](#screenshot) |
 [Team](#team) |
 [Requirements](#requirements) |
+[Folder Structure](#folder structure) |
 [Configuration](#configuration) |
+[Building the program](#building the program) |
 [Running the program](#running the program) |
 [License](#license) |
 [TODO](#todo)
@@ -69,12 +71,17 @@ Folder Structure
 .
 </pre>
 
-This should be your folder structure before running any commands.
+The folder structure should look like this before building.
+
+Building the Program
+--------------------
+<ol>
+<li>Navigate into the project directory. From the project directory, run <code>gradle build</code>.</li>
+</ol>
 
 Running the Program
 -------------------
 <ol>
-<li>From the project directory, run <code>gradle build</code>.</li>
 <li>Run the program by typing <code>gradle runJar</code></li>
 <li>Enjoy!</li>
 </ol>
