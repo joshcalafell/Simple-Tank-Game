@@ -1,4 +1,86 @@
 Simple-Tank-Game
 ===============================
 
-Ex8 (Simple-Tank-Gme), co-written with Dylan Otto Krider was an open-ended assignment from our Games Programming class using Java and OpenGL. 
+Ex8 (Simple-Tank-Game), co-written with Dylan Otto Krider was an open-ended assignment from our Games Programming class using Java and OpenGL. 
+
+Navigation
+-----------
+[Simple-Tank-Game](#tsimple-tank-game) |
+[Abstract](#abstract) |
+[Screenshot](#screenshot) |
+[Team](#team) |
+[Configuration](#configuration) |
+[Running the program](#running the program) |
+[License](#license) |
+[TODO](#todo)
+
+Purpose
+-------
+This project aims to create an animated 3D rendering of a 4D cube known as a tesseract. We are using Java's LWJGL library and OpenGL to make the animation, and Gradle/Groovy as a build tools to make the JAR, automate testing, and to link required resources and natives. So, we're kind of doing 4 things here. 
+
+Screenshot
+----------
+![Picture](https://dicesoft.net/publicDownloads/tesseract/tesseract2.jpg)
+
+Final result may look like this below.
+
+![Picture](http://rabbitfighter.net/wp-content/uploads/2014/12/tesseract.jpg)
+
+
+Team
+----------------
+<ul>
+<li><a href="https://twitter.com/redragonx">@redragonx</a></li>
+<li><a href="https://twitter.com/rabbitfighter81">@rabbitfighter81</a></li>
+</ul>
+
+
+Configuration
+==============================
+This program requires Java and LWJGL vers 2.9.3 (Light Weight Java Gaming Library) jar file as well as natives for Windows, Linux, and OSX that come with it. As per our Gradle build program, these files must be in the correct folders in the project structure or the program will fail. Fortunately, all you need to do is clone this repository to get the project in the proper form.
+
+Folder Structure
+----------------
+<pre>
+.
+├── build.gradle
+├── libs
+│   ├── jar
+│   │   └── lwjgl.jar
+│   └── natives
+│       ├── linux
+│       ├── macosx
+│       └── windows
+├── LICENSE
+├── README.md
+├── src
+│   └── main
+│       └── java
+|..         └── net
+|..             └── rabbitfighter
+|..                 └── game
+|..                     └── Basic.java
+|..                     └── Box.java
+|..                     └── Ex8.java
+|..                     └── Tripple.java
+
+</pre>
+
+This should be your folder structure before running any commands.
+
+Running the Program
+-------------------
+<ol>
+<li>If gradle is not installed, install it. Then from the project directory, run <code>gradle build</code>.</li>
+<li>Run the program by typing <code>gradle runJar</code></li>
+</ol>
+
+The program should run now. Yay!
+
+Liscence
+---------
+Creative Commons
+
+TODO
+----
+This game is a work in progress... 
