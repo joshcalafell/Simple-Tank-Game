@@ -23,11 +23,6 @@ Screenshot
 ----------
 ![Picture](http://rabbitfighter.net/wp-content/uploads/2015/04/Simple-Tank-Game.png)
 
-Final result may look like this below.
-
-![Picture](http://rabbitfighter.net/wp-content/uploads/2014/12/tesseract.jpg)
-
-
 Team
 ----------------
 <ul>
