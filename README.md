@@ -12,8 +12,8 @@ Navigation
 [Requirements](#requirements) |
 [Folder Structure](#folder structure) |
 [Configuration](#configuration) |
-[Building the program](#buildingtheprogram) |
-[Running the program](#runningtheprogram) |
+[Building the program](#building-the-program) |
+[Running the Program](#running the program) |
 [Licenses](#licenses) |
 [TODO](#todo)
 
