@@ -1,7 +1,7 @@
 Simple-Tank-Game
 ===============================
 
-Ex8 (Simple-Tank-Game), co-written with Dylan Otto Krider was an open-ended assignment from our Games Programming class using Java and OpenGL. 
+Simple-Tank-Game (a.k.a. Ex8), co-written with Dylan Otto Krider was an open-ended assignment from our Games Programming class using Java and OpenGL. 
 
 Navigation
 -----------
@@ -15,9 +15,9 @@ Navigation
 [License](#license) |
 [TODO](#todo)
 
-Purpose
--------
-This project aims to create an animated 3D rendering of a 4D cube known as a tesseract. We are using Java's LWJGL library and OpenGL to make the animation, and Gradle/Groovy as a build tools to make the JAR, automate testing, and to link required resources and natives. So, we're kind of doing 4 things here. 
+Abstract
+--------
+This game was a project for a CS390A - Game Programming @ MSU Denver, taught by Professor Jerry Shultz. We were to follow guidelines, and create a game using only Java and OpenGL. This program is built, tested, and deployed using Gradle, it was written in Java using Java OpenGL bindings provided by Light Weight Java Gaming Library (LWJGL). 
 
 Screenshot
 ----------
@@ -34,7 +34,7 @@ Requirements
 ------------
 <ul>
 <li> Java vers 1.7+ </l1>
-<li> Gradle vers 2.0+ (for installation help go to <a href="https://gradle.org/">Gradle's home page</a></li>
+<li> Gradle vers 2.0+ (for installation help go to <a href="https://gradle.org/">Gradle's home page</a>)</li>
 </ul>
 
 
@@ -76,13 +76,12 @@ Running the Program
 <ol>
 <li>From the project directory, run <code>gradle build</code>.</li>
 <li>Run the program by typing <code>gradle runJar</code></li>
+<li>Enjoy!</li>
 </ol>
-
-Enoy!
 
 Licence
 ---------
-Creative Commons
+CCO (See LICENCE)
 
 TODO
 ----
