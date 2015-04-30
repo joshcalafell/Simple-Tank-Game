@@ -1,6 +1,8 @@
+package net.rabbitfighter.game;
+
 import org.lwjgl.input.Keyboard;
 
-
+import java.io.File;
 import static org.lwjgl.opengl.GL11.*;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-
+package net.rabbitfighter.game;
 public class Triple {
 	public double x;
 	public double y;

@@ -1,3 +1,5 @@
+package net.rabbitfighter.game;
+
 /*  framework to be extended to make desired
     graphical, event-driven application
 
@@ -18,13 +20,15 @@
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
-
+import java.io.File;
 
 public class Basic {
 	// test this basic application
 	public static void main(String[] args) {
-		
-	}// main
+	    System.setProperty("java.library.path", "libs");
+        //Extracted from Distributing Your LWJGL Application
+        System.setProperty("org.lwjgl.librarypath", new File("libs/natives").getAbsolutePath());
+    }// main
 
 	// instance variables
 	private String title; // title of the application

@@ -24,5 +24,9 @@ jar {
 
 task runJar(type: JavaExec, dependsOn: jar) {
     main 'net.rabbitfighter.game.Ex8'
-    //classpath = runtimeClasspath
+    classpath = sourceSets.main.runtimeClasspath 
+}
+
+tasks.withType(JavaExec) {
+    systemProperty "java.library.path", file("./libs/natives")
 }
