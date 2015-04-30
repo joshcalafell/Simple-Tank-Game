@@ -90,7 +90,7 @@ Licences
 ---------
 <ul>
 <li>LWJGL sources and binaries: Copyright (c) 2002-2007 Lightweight Java Game Library Project</li>
-<li>Our Code - CCO Licence (See LICENCE-CCO)</li>
+<li>All other: CCO Licence (See LICENCE-CCO)</li>
 </ul>
 
 TODO
