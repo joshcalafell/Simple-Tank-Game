@@ -8,7 +8,7 @@
 *.war
 *.ear
 build/
-build/tmp
+build/tmp/
 .gradle/
 
 
