@@ -1,34 +1,36 @@
 package net.rabbitfighter.game;
 
-/*  framework to be extended to make desired
-    graphical, event-driven application
-
-    Should 
-
-        make a constructor that calls super and initializes things
-        that should happen before Display is created
-
-    and override
-
-        init:  initialize things that happen after Display is created
-        processInputs:  respond to input events
-        update:  update instance variables to simulate advancing
-                 time and/or response to inputs
-        display:  draw graphics showing current state of things
- */
-
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import java.io.File;
 
+/**  
+* Basic is a framework to be extended to make desired
+* graphical, event-driven application
+*
+* Should:
+*
+*     make a constructor that calls super and initializes things
+*     that should happen before Display is created.
+*
+*  and override:
+*
+*     init:  initialize things that happen after Display is created
+*     processInputs:  respond to input events
+*     update:  update instance variables to simulate advancing
+*              time and/or response to inputs
+*     display:  draw graphics showing current state of things
+*
+* @author Joshua Michael Waggoner (@rabbitfighter81) and Dylan Otto Krider 
+* @version 0.1.1
+*/
+
 public class Basic {
 	// test this basic application
 	public static void main(String[] args) {
-	    System.setProperty("java.library.path", "libs");
-        //Extracted from Distributing Your LWJGL Application
-        System.setProperty("org.lwjgl.librarypath", new File("libs/natives").getAbsolutePath());
-    }// main
+
+	} // main
 
 	// instance variables
 	private String title; // title of the application
@@ -51,7 +53,7 @@ public class Basic {
 		running = false;
 		closeable = true;
 		resizeable = false;
-		
+
 	}
 
 	public void start() {
@@ -61,7 +63,7 @@ public class Basic {
 			Display.setVSyncEnabled(true);
 			Display.create();
 			Display.setTitle(title);
-		
+
 		} catch (LWJGLException e) {
 			System.out.println("Basic constructor failed to create window");
 			e.printStackTrace();
@@ -87,10 +89,7 @@ public class Basic {
 
 		Display.destroy();
 
-	}// start
-
-	// ------------------ these methods can be called by the application
-	// --------
+	} 
 
 	protected int getPixelWidth() {
 		return pixelWidth;
@@ -126,18 +125,14 @@ public class Basic {
 		running = false;
 	}
 
-	// ------------------ these methods should be overridden ------------------
+	/***** these methods should be overridden *****/
 
-	protected void init() {
-	}
+	protected void init() {}
 
-	protected void processInputs() {
-	}
+	protected void processInputs() {}
 
-	protected void update() {
-	}
+	protected void update() {}
 
-	protected void display() {
-	}
+	protected void display() {}
 
-}// Basic
+} // Basic

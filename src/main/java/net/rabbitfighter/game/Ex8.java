@@ -1,54 +1,70 @@
 package net.rabbitfighter.game;
 
 import org.lwjgl.input.Keyboard;
-
 import java.io.File;
 import static org.lwjgl.opengl.GL11.*;
-
 import java.util.ArrayList;
 
+
+/**
+* Ex8 is where the game loop happens
+* @author Joshua Michael Waggoner and Dylan Otto Krider
+* @version 0.1.1
+*/
 public class Ex8 extends Basic {
 	public static void main(String[] args) {
 		Ex8 app = new Ex8();
 		app.start();
 	}
 
-	// instance variables for Ex7:
-	private ArrayList<Box> list; // all boxes, including player
-	private Box playerBox; // convenience reference to player
 	final double PLAYER_WIDTH = 4;
 	final double PLAYER_HEIGHT = 4;
 	static final double PLAYER_SPEED = 20;
+
+	private ArrayList<Box> list; // all boxes, including player
+	private Box playerBox; // convenience reference to player
+	
 	private double lambda;
 	private int ammo;
 	private long startTime;
-	int frames;
-	int shotFrames;
+
 	private boolean started;
 	private boolean lost;
 	private boolean won;
+	
 	String state;
+	int frames;
+	int shotFrames;
 
 	public Ex8() {
 
 		// defines the actual size of the window.
 		super(
-				"Ex8 | Dylan & Josh | Controls: UP, DOWN, LEFT, RIGHT, SPACEBAR to shoot",
-				800, 800, 60);
+			"Ex8 | Dylan & Josh | Controls: UP, DOWN, LEFT, RIGHT, SPACEBAR to shoot",
+			800, 
+			800, 
+			60
+		);
 
 	}// end constructor
 
 	public void init() {
 
 		
-		// load all the boxes:
+		// load all the boxes
 		list = new ArrayList<Box>();
-		// xBounce=false; yBounce=false;
+	
 		startTime = (System.nanoTime() / 100000000) % 1000;
-		// ===============hardcoded boxes========================
+		
+		// hardcoded boxes
+		list.add(new Box(
+			new Triple(50, 50, 0), 
+			PLAYER_WIDTH, 
+			PLAYER_HEIGHT,
+			90, 
+			"player"
+		));
 
-		list.add(new Box(new Triple(50, 50, 0), PLAYER_WIDTH, PLAYER_HEIGHT,
-				90, "player"));
 		playerBox = list.get(0);
 		playerBox.angle = 90;
 		playerBox.Vector = new Triple(0, 1, 0);
@@ -166,8 +182,13 @@ public class Ex8 extends Basic {
 
 					double c = Math.cos(Math.toRadians(playerBox.angle));
 					double s = Math.sin(Math.toRadians(playerBox.angle));
-					Triple bullet = new Triple(playerBox.x + 8 * c, playerBox.y
-							+ 8 * s, 0);
+					
+					Triple bullet = new Triple(
+						playerBox.x + 8 * c, 
+						playerBox.y	+ 8 * s, 
+						0
+					);
+
 					Box b3 = new Box(bullet, 1, .5, 0, "bullet");
 					b3.speed = playerBox.speed + 2;
 					// b3.changeSpeed(playerBox.speed+35);
@@ -438,3 +459,5 @@ public class Ex8 extends Basic {
 
 	
 }
+
+//EOF

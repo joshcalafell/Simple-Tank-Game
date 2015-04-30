@@ -11,16 +11,14 @@ import static org.lwjgl.opengl.GL11.glRotated;
 import static org.lwjgl.opengl.GL11.glScaled;
 import static org.lwjgl.opengl.GL11.glTranslated;
 import static org.lwjgl.opengl.GL11.glVertex3d;
-
 import java.util.ArrayList;
-
 import org.lwjgl.opengl.GL11;
 
 /**
- * @author Joshua Michael Waggoner (@rabbitfighter81) and Dylan Otto Krider 
- * Git Hub: github.com/rabbitfighter81/SimpleJOGLGame
- * 
- */
+* Box holds information and methods about a box
+* @author Joshua Michael Waggoner (@rabbitfighter81) and Dylan Otto Krider 
+* @version 0.1.1
+*/
 public class Box {
 	private static double SPEEDCHANGEAMOUNT = .05;
 	private static double ANGLECHANGEAMOUNT = 5;
