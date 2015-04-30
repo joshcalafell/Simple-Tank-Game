@@ -14,7 +14,7 @@ Navigation
 [Configuration](#configuration) |
 [Building the program](#building the program) |
 [Running the program](#running the program) |
-[License](#license) |
+[Licenses](#licenses) |
 [TODO](#todo)
 
 Abstract
@@ -86,9 +86,12 @@ Running the Program
 <li>Enjoy!</li>
 </ol>
 
-Licence
+Licences
 ---------
-CCO (See LICENCE)
+<ul>
+<li>LWJGL sources and binaries: Copyright (c) 2002-2007 Lightweight Java Game Library Project</li>
+<li>Our Code - CCO Licence (See LICENCE-CCO)</li>
+</ul>
 
 TODO
 ----
