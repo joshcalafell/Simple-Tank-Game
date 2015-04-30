@@ -28,8 +28,8 @@ Screenshot
 Team
 ----------------
 <ul>
-<li>Joshua Michael Waggoner (<a href="https://twitter.com/redragonx">@rabbitfighter81</a>)</li>
-<li>Dylan Otto Krider (<a href="https://twitter.com/rabbitfighter81">@memekiller</a>)</li>
+<li>Joshua Michael Waggoner (<a href="https://twitter.com/rabbitfighter81">@rabbitfighter81</a>)</li>
+<li>Dylan Otto Krider (<a href="https://twitter.com/dokrider">@dokrider</a>)</li>
 </ul>
 
 Requirements
