@@ -10,10 +10,10 @@ Navigation
 [Screenshot](#screenshot) |
 [Team](#team) |
 [Requirements](#requirements) |
-[Folder Structure](#folder structure) |
+[Folder Structure](#folder-structure) |
 [Configuration](#configuration) |
 [Building the program](#building-the-program) |
-[Running the Program](#running the program) |
+[Running the Program](#running-the-program) |
 [Licenses](#licenses) |
 [TODO](#todo)
 
