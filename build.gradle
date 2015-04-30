@@ -1,0 +1,28 @@
+/*
+* Gradle setup for our game
+*/
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile files('libs/jar/lwjgl.jar')
+    compile files('libs/jar/lwjgl_util.jar')
+    runtime files('libs/natives')
+}
+
+jar {
+    from configurations.compile.collect { zipTree it }
+    manifest.attributes 'Main-Class': 'net.rabbitfighter.game.Ex8' 
+}
+
+task runJar(type: JavaExec, dependsOn: jar) {
+    main 'net.rabbitfighter.game.Ex8'
+    //classpath = runtimeClasspath
+}
