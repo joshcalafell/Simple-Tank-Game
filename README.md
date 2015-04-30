@@ -82,7 +82,7 @@ Building the Program
 Running the Program
 -------------------
 <ol>
-<li>Run the program by typing <code>gradle runJar</code></li>
+<li>Run the program by typing <code>gradle runJar</code> in the root project directory</li>
 <li>Enjoy!</li>
 </ol>
 
@@ -92,4 +92,4 @@ CCO (See LICENCE)
 
 TODO
 ----
-This game is a work in progress. 
+This game is a work in progress. We hope you have fun, learn something, or at least kill some time. We will add updates, and clean up code as time allows. For now it is working though. Yay!
