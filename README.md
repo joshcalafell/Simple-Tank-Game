@@ -1,4 +1,4 @@
-SimpleJOGLGame
+Simple-Tank-Game
 ===============================
 
-Ex8 (SimpleJOGLGame), co-written with Dylan Otto Krider was an open-ended assignment from our Games Programming class using Java and OpenGL
+Ex8 (Simple-Tank-Gme), co-written with Dylan Otto Krider was an open-ended assignment from our Games Programming class using Java and OpenGL. 
