@@ -88,30 +88,21 @@ Running the Program
 
 Contact
 -------
-<style>
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-}
-</style>
-<table style="width:100%">
+<table style="width:100%; border: 1px solid black; border-collapse: collapse;">
   <tr>
-    <th>Name</th>
-    <th>Email</th>		
-    <th>Twitter</th>
+    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color:white">Name</th>
+    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color:white">Email</th>		
+    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color:white">Twitter</th>
   </tr>
   <tr>
-    <td>Joshua Michael Waggoner</td>
-    <td>rabbitfighter@cryptolab</td>		
-    <td>@rabbitfighter81</td>
+    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">Joshua Michael Waggoner</td>
+    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">rabbitfighter@cryptolab</td>		
+    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">@rabbitfighter81</td>
   </tr>
   <tr>
-    <td>Dylan Otto Krider</td>
-    <td>dkrider@comcast.net</td>		
-    <td>@dokrider</td>
+    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">Dylan Otto Krider</td>
+    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">dkrider@comcast.net</td>		
+    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">@dokrider</td>
   </tr>
 </table>
 
