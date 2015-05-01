@@ -90,9 +90,9 @@ Contact
 -------
 <table style="width:100%; border: 1px solid black; border-collapse: collapse;">
   <tr>
-    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color:white">Name</th>
-    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color:white">Email</th>		
-    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color:white">Twitter</th>
+    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color: white;">Name</th>
+    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color: white;">Email</th>		
+    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color: white;">Twitter</th>
   </tr>
   <tr>
     <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">Joshua Michael Waggoner</td>
