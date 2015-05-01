@@ -28,8 +28,8 @@ Screenshot
 Team
 ----------------
 <ul>
-<li>Joshua Michael Waggoner - on Twitter: (<a href="https://twitter.com/rabbitfighter81">@rabbitfighter81</a>)</li>
-<li>Dylan Otto Krider - on Twitter:  (<a href="https://twitter.com/dokrider">@dokrider</a>)</li>
+<li>Joshua Michael Waggoner</li>
+<li>Dylan Otto Krider</li>
 </ul>
 
 Requirements
@@ -88,21 +88,21 @@ Running the Program
 
 Contact
 -------
-<table style="width:100%; border: 1px solid black; border-collapse: collapse;">
+<table>
   <tr>
-    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color: white;">Name</th>
-    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color: white;">Email</th>		
-    <th style="border: 1px solid black; border-collapse: collapse; padding: 5px; background-color: black; color: white;">Twitter</th>
+    <th>Name</th>
+    <th>Email</th>		
+    <th>Twitter</th>
   </tr>
   <tr>
-    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">Joshua Michael Waggoner</td>
-    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">rabbitfighter@cryptolab</td>		
-    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">@rabbitfighter81</td>
+    <td>Joshua Michael Waggoner</td>
+    <td>rabbitfighter@cryptolab</td>		
+    <td><a href="https://twitter.com/rabbitfighter81">@rabbitfighter81</a></td>
   </tr>
   <tr>
-    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">Dylan Otto Krider</td>
-    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">dkrider@comcast.net</td>		
-    <td style="border: 1px solid black; border-collapse: collapse; padding: 5px;">@dokrider</td>
+    <td>Dylan Otto Krider</td>
+    <td>dkrider@comcast.net</td>		
+    <td><a href="https://twitter.com/dokrider">@dokrider</a></td>
   </tr>
 </table>
 
@@ -115,4 +115,4 @@ Licences
 
 TODO
 ----
-This game is a work in progress. We hope you have fun, learn something, or at least kill some time. We will add updates, and clean up code as time allows. For now it is working though. Yay!
+This game is a work in progress. We hope you have fun, learn something, or at least kill some time. We will add updates, and clean up code as time allows. For now it is working though. :)
