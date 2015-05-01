@@ -1,7 +1,6 @@
 Simple-Tank-Game
 ===============================
-
-Simple-Tank-Game (a.k.a. Ex8), co-written with Dylan Otto Krider was an open-ended assignment from our Games Programming class using Java and OpenGL. 
+Simple-Tank-Game (a.k.a. Ex8) was an open-ended assignment from our Games Programming class using Java and OpenGL. 
 
 Navigation
 -----------
@@ -14,12 +13,13 @@ Navigation
 [Configuration](#configuration) |
 [Building the program](#building-the-program) |
 [Running the Program](#running-the-program) |
+[Contact](#contact) |
 [Licenses](#licenses) |
 [TODO](#todo)
 
 Abstract
 --------
-This game was a project for a CS390A - Game Programming @ MSU Denver, taught by Professor Jerry Shultz. We were to follow guidelines, and create a game using only Java and OpenGL. This program is built, tested, and deployed using Gradle, it was written in Java using Java OpenGL bindings provided by Light Weight Java Gaming Library (LWJGL). 
+This game was a project for a CS390A - Game Programming @ MSU Denver, taught by Professor Jerry Shultz. We were to follow loose guidelines, and create a game using only Java and OpenGL. This program is built, and deployed using Gradle. It is written in Java using Java OpenGL bindings provided by Light Weight Java Gaming Library (LWJGL). 
 
 Screenshot
 ----------
@@ -28,8 +28,8 @@ Screenshot
 Team
 ----------------
 <ul>
-<li>Joshua Michael Waggoner (<a href="https://twitter.com/rabbitfighter81">@rabbitfighter81</a>)</li>
-<li>Dylan Otto Krider (<a href="https://twitter.com/dokrider">@dokrider</a>)</li>
+<li>Joshua Michael Waggoner - on Twitter: (<a href="https://twitter.com/rabbitfighter81">@rabbitfighter81</a>)</li>
+<li>Dylan Otto Krider - on Twitter:  (<a href="https://twitter.com/dokrider">@dokrider</a>)</li>
 </ul>
 
 Requirements
@@ -85,6 +85,14 @@ Running the Program
 <li>Run the program by typing <code>gradle runJar</code> in the root project directory</li>
 <li>Enjoy!</li>
 </ol>
+
+Contact
+-------
+<table>
+<tr>
+<td> Josh: rabbitfighter@cryptolab.net</td>
+<td> Dylan: dkrider@comcast.net</td>
+</table>
 
 Licences
 ---------
