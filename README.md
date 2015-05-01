@@ -88,10 +88,31 @@ Running the Program
 
 Contact
 -------
-<table>
-<tr>
-<td> Josh: rabbitfighter@cryptolab.net</td>
-<td> Dylan: dkrider@comcast.net</td>
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>		
+    <th>Twitter</th>
+  </tr>
+  <tr>
+    <td>Joshua Michael Waggoner</td>
+    <td>rabbitfighter@cryptolab</td>		
+    <td>@rabbitfighter81</td>
+  </tr>
+  <tr>
+    <td>Dylan Otto Krider</td>
+    <td>dkrider@comcast.net</td>		
+    <td>@dokrider</td>
+  </tr>
 </table>
 
 Licences
