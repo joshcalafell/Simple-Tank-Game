@@ -54,21 +54,39 @@ Folder Structure
 │   │   └── lwjgl.jar
 │   └── natives
 │       ├── linux
+│       │   ├── libjinput-linux64.so
+│       │   ├── libjinput-linux.so
+│       │   ├── liblwjgl64.so
+│       │   ├── liblwjgl.so
+│       │   ├── libopenal64.so
+│       │   └── libopenal.so
 │       ├── macosx
+│       │   ├── libjinput-osx.dylib
+│       │   ├── liblwjgl.dylib
+│       │   └── openal.dylib
 │       └── windows
-├── LICENSE
+│           ├── jinput-dx8_64.dll
+│           ├── jinput-dx8.dll
+│           ├── jinput-raw_64.dll
+│           ├── jinput-raw.dll
+│           ├── lwjgl64.dll
+│           ├── lwjgl.dll
+│           ├── OpenAL32.dll
+│           └── OpenAL64.dll
 ├── README.md
-├── src
-│   └── main
-│       └── java
-|..         └── net
-|..             └── rabbitfighter
-|..                 └── game
-|..                     └── Basic.java
-|..                     └── Box.java
-|..                     └── Ex8.java
-|..                     └── Tripple.java
-.
+└── src
+    └── main
+        └── java
+            └── net
+                └── rabbitfighter
+                    └── game
+                        ├── Basic.java
+                        ├── Box.java
+                        ├── Ex8.java
+                        └── Triple.java
+
+12 directories, 24 files
+
 </pre>
 
 The folder structure should look like this before building.
