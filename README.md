@@ -40,13 +40,13 @@ Requirements
 <li> Gradle vers 2.0+ (for installation help go to <a href="https://gradle.org/">Gradle's home page</a>)</li>
 </ul>
 
-Execuatbles
+Executables
 -----------
 Included in the folder <code>executables</code> are the following files:
 <ul>
-<li>Simple-Tank-Game-Linux.sh that will run on all linux platforms </li>
+<li>Simple-Tank-Game-Linux.sh that will run on all linux platforms by forst making it execuatble using <code>chmod +x Simple-Tank-Game-Linux.sh</li> and then <code>./Simple-Tank-Game-Linux.sh</code>.
 <li>Simple-Tank-Game-Runnable.jar that will run on any platform with java by typing <code>java -jar Simple-Tank-Game-Runnable.jar</code>.</li>
-<li>Simple-Tank-Game-Windows.exe for Windows folks</li>
+<li>Simple-Tank-Game-Windows.exe for Windows folks that will work witth a doublee-click.</li>
 </ul>
 
 Configuration
