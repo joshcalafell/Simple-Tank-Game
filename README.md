@@ -42,7 +42,7 @@ Requirements
 
 Executables
 -----------
-Included in the folder <code>executables</code> are the following files:
+Included in the folder <code>executables</code> are the following files that <strong>do not</strong> require assembly, only a working Java runtime environment:
 <ul>
 <li>Simple-Tank-Game-Linux.sh that will run on all linux platforms by:<br>
     1) Make it execuatble using <code>chmod +x Simple-Tank-Game-Linux.sh</code><br>
