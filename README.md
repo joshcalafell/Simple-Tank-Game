@@ -45,7 +45,7 @@ Executables
 Included in the folder <code>executables</code> are the following files:
 <ul>
 <li>Simple-Tank-Game-Linux.sh that will run on all linux platforms by:<br>
-    1) Make it execuatble using <code>chmod +x Simple-Tank-Game-Linux.sh<br>
+    1) Make it execuatble using <code>chmod +x Simple-Tank-Game-Linux.sh</code><br>
     2) Run it using <code>./Simple-Tank-Game-Linux.sh</code><br></li>
     
 <li>Simple-Tank-Game-Runnable.jar that will run on any platform with java by typing <code>java -jar     Simple-Tank-Game-Runnable.jar</code>.</li>
