@@ -44,13 +44,13 @@ Executables
 -----------
 Included in the folder <code>executables</code> are the following files:
 <ul>
-<li>Simple-Tank-Game-Linux.sh that will run on all linux platforms by:
-    <ol>
-    <li>making it execuatble using <code>chmod +x Simple-Tank-Game-Linux.sh</li></li>
-    <li>Then run it using <code>./Simple-Tank-Game-Linux.sh</code></li>
-    </ol>
-<li>Simple-Tank-Game-Runnable.jar that will run on any platform with java by typing <code>java -jar Simple-Tank-Game-Runnable.jar</code>.</li>
-<li>Simple-Tank-Game-Windows.exe for Windows folks that will work witth a doublee-click.</li>
+    <li>Simple-Tank-Game-Linux.sh that will run on all linux platforms by:
+        <ul>
+        <li>Make it execuatble using <code>chmod +x Simple-Tank-Game-Linux.sh</li></li>
+        <li>Run it using <code>./Simple-Tank-Game-Linux.sh</code></li>
+        </ul>
+    <li>Simple-Tank-Game-Runnable.jar that will run on any platform with java by typing <code>java -jar     Simple-Tank-Game-Runnable.jar</code>.</li>
+    <li>Simple-Tank-Game-Windows.exe for Windows folks that will work witth a double-click.</li>
 </ul>
 
 Configuration
