@@ -9,6 +9,7 @@ Navigation
 [Screenshot](#screenshot) |
 [Team](#team) |
 [Requirements](#requirements) |
+[Executables](#executables) |
 [Folder Structure](#folder-structure) |
 [Configuration](#configuration) |
 [Building the program](#building-the-program) |
@@ -39,6 +40,14 @@ Requirements
 <li> Gradle vers 2.0+ (for installation help go to <a href="https://gradle.org/">Gradle's home page</a>)</li>
 </ul>
 
+Execuatbles
+-----------
+Included in the folder <code>executables</code> are the following files:
+<ul>
+<li>Simple-Tank-Game-Linux.sh that will run on all linux platforms </li>
+<li>Simple-Tank-Game-Runnable.jar that will run on any platform with java by typing <code>java -jar Simple-Tank-Game-Runnable.jar</code>.</li>
+<li>Simple-Tank-Game-Windows.exe for Windows folks</li>
+</ul>
 
 Configuration
 -------------
