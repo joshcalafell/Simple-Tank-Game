@@ -49,10 +49,10 @@ Included in the folder <code>executables</code> are the following files that <st
     2) Run it using <code>./Simple-Tank-Game-Linux.sh</code><br></li>
     
 <li><strong>Simple-Tank-Game-Runnable.jar</strong> will run on any platform with java by typing <code>java -jar     Simple-Tank-Game-Runnable.jar</code>.</li>
-<li><strong>Simple-Tank-Game-Windows.exe</strong> is for Windows folks that will work witth a double-click.</li>
+<li><strong>Simple-Tank-Game-Windows.exe</strong> is for Windows folks and should open with a double-click.</li>
 </ul>
 
-All executable should work for both 32-bit and 64-bit machines.
+<strong>All executable should work for both 32-bit and 64-bit machines.</strong>
 
 
 Configuration
