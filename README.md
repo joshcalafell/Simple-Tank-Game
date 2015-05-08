@@ -45,14 +45,14 @@ Executables
 Included in the folder <code>executables</code> are the following files that <strong>do not</strong> require assembly, only a working Java runtime environment:
 <ul>
 <li><strong>Simple-Tank-Game-Linux.sh</strong> will run on all linux platforms by doing the following:<br>
-    1) Make it execuatble using <code>chmod +x Simple-Tank-Game-Linux.sh</code><br>
+    1) Make it execuatable using <code>chmod +x Simple-Tank-Game-Linux.sh</code><br>
     2) Run it using <code>./Simple-Tank-Game-Linux.sh</code><br></li>
     
-<li><strong>Simple-Tank-Game-Runnable.jar</strong> will run on any platform with java by typing <code>java -jar     Simple-Tank-Game-Runnable.jar</code>.</li>
+<li><strong>Simple-Tank-Game-Runnable.jar</strong> will run on any platform with Java installed by typing <code>java -jar Simple-Tank-Game-Runnable.jar</code>.</li>
 <li><strong>Simple-Tank-Game-Windows.exe</strong> is for Windows folks and should open with a double-click.</li>
 </ul>
 
-<strong>All executable should work for both 32-bit and 64-bit machines.</strong>
+<strong>All executables should work for both 32-bit and 64-bit machines.</strong>
 
 
 Configuration
