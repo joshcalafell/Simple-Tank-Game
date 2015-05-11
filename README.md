@@ -8,7 +8,8 @@ Navigation
 [Abstract](#abstract) |
 [Screenshot](#screenshot) |
 [Team](#team) |
-[Requirements](#requirements) |
+[Build Requirements](#build-requirements) |
+[System Requirements](#system-requirements) |
 [Executables](#executables) |
 [Folder Structure](#folder-structure) |
 [Configuration](#configuration) |
@@ -33,11 +34,19 @@ Team
 <li>Dylan Otto Krider</li>
 </ul>
 
-Requirements
+Build Requirements
 ------------
 <ul>
-<li> Java vers 1.7+ </l1>
+<li> Any Java JDK vers 1.7+ </l1>
 <li> Gradle vers 2.0+ (for installation help go to <a href="https://gradle.org/">Gradle's home page</a>)</li>
+<li> Git </li>
+</ul>
+
+System Requirements
+------------
+<ul>
+<li> Any Java vers 1.7+ </l1>
+<li> Linux, MacOSX, or Windows Operating System - 32-bit or 64-bit </li>
 </ul>
 
 Executables
