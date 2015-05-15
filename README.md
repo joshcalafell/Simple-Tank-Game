@@ -2,6 +2,8 @@ Simple-Tank-Game
 ===============================
 Simple-Tank-Game (a.k.a. Ex8) was an open-ended assignment from our Games Programming class using Java and OpenGL. 
 
+[![Build Status](https://travis-ci.org/rabbitfighter81/Simple-Tank-Game.png)](#https://travis-ci.org/rabbitfighter81/Simple-Tank-Game.png)
+
 Navigation
 -----------
 [Simple-Tank-Game](#tsimple-tank-game) |
